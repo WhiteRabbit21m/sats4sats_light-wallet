@@ -3,7 +3,9 @@ package telegram
 import (
 	"context"
 	"fmt"
+	"strings"
 
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
 	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
 	tb "gopkg.in/lightningtipbot/telebot.v3"
@@ -25,7 +27,8 @@ func (bot TipBot) makeHelpMessage(ctx context.Context, m *tb.Message) string {
 		dynamicHelpMessage = Translate(ctx, "infoHelpMessage") + dynamicHelpMessage
 	}
 	helpMessage := Translate(ctx, "helpMessage")
-	return fmt.Sprintf(helpMessage, dynamicHelpMessage)
+	lightningDomain := strings.ToLower(internal.Configuration.Bot.LNURLHostUrl.Hostname())
+	return fmt.Sprintf(helpMessage, dynamicHelpMessage, lightningDomain)
 }
 
 func (bot TipBot) helpHandler(ctx intercept.Context) (intercept.Context, error) {

@@ -151,7 +151,13 @@ func (bot *TipBot) sendHandler(ctx intercept.Context) (intercept.Context, error)
 
 	// check for user in command, accepts user mention or plain username without @
 	if len(ctx.Message().Entities) > 1 && ctx.Message().Entities[1].Type == "mention" {
-		toUserStrMention = ctx.Message().Text[ctx.Message().Entities[1].Offset : ctx.Message().Entities[1].Offset+ctx.Message().Entities[1].Length]
+		start := ctx.Message().Entities[1].Offset
+		end := ctx.Message().Entities[1].Offset + ctx.Message().Entities[1].Length
+		// Ensure we don't go beyond the string length
+		if end > len(ctx.Message().Text) {
+			end = len(ctx.Message().Text)
+		}
+		toUserStrMention = ctx.Message().Text[start:end]
 		toUserStrWithoutAt = strings.TrimPrefix(toUserStrMention, "@")
 	} else {
 		toUserStrWithoutAt, err = getArgumentFromCommand(ctx.Message().Text, 2)
