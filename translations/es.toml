@@ -74,7 +74,7 @@ La cantidad máxima permitida es de 300K de Sats. Pulsa /basics para más inform
 ⚙️ *Comandos básicos*
 */tip*: Responder a un mensaje con tip `/tip <amount> [<memo>]`
 */balance*: Comprueba tu saldo: `/balance`
-*/send*: Enviar fondos a un usuario: `/send <amount> @user or user@sats.mobi [<memo>]`
+*/send*: Enviar fondos a un usuario: `/send <amount> @user or user@%s [<memo>]`
 */invoice*: Recibir con Lightning: `/invoice <amount> [<memo>]`
 */pay*: Pague con Lightning: `/pay <invoice>`
 */advanced*: Funciones avanzadas.
@@ -175,7 +175,7 @@ confirmSendMessage         = """¿Quieres pagar a %s?\n\n💸 Importe: %d sat"""
 confirmSendAppendMemo      = """\n✉️ %s"""
 sendCancelledMessage       = """🚫 Enviar cancelado."""
 errorTryLaterMessage       = """🚫 Error. Vuelva a intentarlo más tarde."""
-sendSyntaxErrorMessage     = """¿Has introducido un importe y un destinatario? Puedes usar el comando /send para enviarle sat a usuarios de Telegram o %s a una dirección de Lightning como USERNAME@sats.mobi ."""
+sendSyntaxErrorMessage     = """¿Has introducido un importe y un destinatario? Puedes usar el comando /send para enviarle sat a usuarios de Telegram o %s a una dirección de Lightning como USERNAME@%s ."""
 sendHelpText               = """📖 Oops, eso no funcionó. %s
 
 *Uso:* `/send <amount> <user> [<memo>]`
@@ -223,8 +223,8 @@ donateEnterAmountMessage = """Has ingresado una canidad?"""
 donateValidAmountMessage = """Ingresaste una cantidad válido?"""
 donateHelpText           = """📖 Ups, eso no funcionó. %s
 
-*Uso:* `/send <cantidad> 0x8859a71ff4569543@sats.mobi`
-*Ejemplo:* `/send 1000 0x8859a71ff4569543@sats.mobi`"""
+*Uso:* `/send <cantidad> username@%s`
+*Ejemplo:* `/send 1000 username@%s`"""
 
 # PHOTO
 

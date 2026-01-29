@@ -72,7 +72,7 @@ func (bot TipBot) handleInlineReceiveQuery(ctx intercept.Context) (intercept.Con
 	toUserStr := GetUserStr(q.Sender)
 
 	// check whether the 3rd argument is a username
-	// command is "@LightningTipBot receive 123 @from_user This is the memo"
+	// command is "@YourBot receive 123 @from_user This is the memo"
 	memo_argn := 2 // argument index at which the memo starts, will be 3 if there is a from_username in command
 	fromUserDb := &lnbits.User{}
 	from_SpecificUser := false

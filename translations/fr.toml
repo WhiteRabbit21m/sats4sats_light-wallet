@@ -68,7 +68,7 @@ Il fonctionne avec Nostr. Le montant maximum autorisé est de 300K Sats. Tapez /
 ⚙️ *Principales Commandes*
 */tip*: Répondre à un message pour envoyer un pourboire : `/tip <montant> [<memo>]`
 */balance*: Afficher votre solde: `/balance`
-*/send*: Envoyer un pourboire à un utilisateur: `/send <montant> @user ou user@sats.mobi [<memo>]`
+*/send*: Envoyer un pourboire à un utilisateur: `/send <montant> @user ou user@%s [<memo>]`
 */invoice*: Recevoir avec Lightning : `/invoice <montant> [<memo>]`
 */pay*: Payer avec Lightning : `/pay <invoice>`
 */advanced*: Fonctionnalités avancées.
@@ -174,7 +174,7 @@ sendSyntaxErrorMessage     = """Avez-vous ajouté un montant et un destinataire 
 sendHelpText               = """📖 Oops, cela n'a pas fonctionné. %s
 
 *Usage:* `/send <montant> <utilisateur> [<memo>]`
-*Exemple:* `/send 1000 0x1f118c4689be07b2@sats.mobi J'adore le bot ! ❤️`
+*Exemple:* `/send 1000 username@%s J'adore le bot ! ❤️`
 *Exemple:* `/send 1234 %s@%s`"""
 
 
@@ -217,8 +217,8 @@ donateEnterAmountMessage = """Avez-vous choisi un montant ?"""
 donateValidAmountMessage = """Avez-vous choisi un montant correct ?"""
 donateHelpText           = """📖 Oops, cela n'a pas fonctionné. %s
 
-*Usage:* `/send <montant> 0x8859a71ff4569543@sats.mobi`
-*Exemple:* `/send 1000 0x8859a71ff4569543@sats.mobi`"""
+*Usage:* `/send <montant> username@%s`
+*Exemple:* `/send 1000 username@%s`"""
 
 # PHOTO
 

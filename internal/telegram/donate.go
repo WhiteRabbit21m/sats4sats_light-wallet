@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/fiatjaf/go-lnurl"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -12,6 +11,9 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/fiatjaf/go-lnurl"
+
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
 	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
 	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
@@ -23,20 +25,21 @@ import (
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )
 
-// PLEASE DO NOT CHANGE THE CODE IN THIS FILE
-// YOU MIGHT BREAK DONATIONS TO THE ORIGINAL PROJECT
-// THE DEVELOPMENT OF LIGHTNINGTIPBOT RELIES ON DONATIONS
-// IF YOU USE THIS PROJECT, LEAVE THIS CODE ALONE
+// DONATION SYSTEM MODIFIED TO USE BOT CONFIGURATION
+// DONATIONS NOW GO TO THE CONFIGURED BOT OWNER
+// USERNAME AND HOSTNAME ARE READ FROM config.yaml
+// DONATIONS ROUTE TO: username@hostname AS CONFIGURED
 
 var (
 	donationEndpoint string
 )
 
 func helpDonateUsage(ctx context.Context, errormsg string) string {
+	hostname := internal.Configuration.Bot.Name
 	if len(errormsg) > 0 {
-		return fmt.Sprintf(Translate(ctx, "donateHelpText"), fmt.Sprintf("%s", errormsg))
+		return fmt.Sprintf(Translate(ctx, "donateHelpText"), fmt.Sprintf("%s", errormsg), hostname, hostname)
 	} else {
-		return fmt.Sprintf(Translate(ctx, "donateHelpText"), "")
+		return fmt.Sprintf(Translate(ctx, "donateHelpText"), "", hostname, hostname)
 	}
 }
 
@@ -117,13 +120,44 @@ func (bot TipBot) donationHandler(ctx intercept.Context) (intercept.Context, err
 }
 
 func init() {
+	// Costruisce l'endpoint di donazione usando la configurazione del bot
+	username := strings.TrimPrefix(internal.Configuration.Bot.Username, "@")
+	hostname := internal.Configuration.Bot.Name
+
+	// Costruisce l'URL: https://hostname/.well-known/lnurlp/username
+	donationURL := fmt.Sprintf("https://%s/.well-known/lnurlp/%s", hostname, username)
+
+	// Applica l'offuscamento ROT13 per mantenere la stessa struttura
 	var sb strings.Builder
-	_, err := io.Copy(&sb, rot13Reader{strings.NewReader("uggcf://ya.gvcf/.jryy-xabja/yaheyc/YvtugavatGvcObg")})
-	//_, err := io.Copy(&sb, strings.NewReader("https://sats.mobi/.well-known/lnurlp/1x299114875e767076"))
+	_, err := io.Copy(&sb, rot13Reader{strings.NewReader(applyRot13(donationURL))})
 	if err != nil {
 		panic(err)
 	}
 	donationEndpoint = sb.String()
+}
+
+// applyRot13 applica la codifica ROT13 a una stringa
+func applyRot13(s string) string {
+	var result strings.Builder
+	for _, c := range s {
+		switch {
+		case c >= 65 && c <= 90:
+			if c <= 77 {
+				result.WriteByte(byte(c + 13))
+			} else {
+				result.WriteByte(byte(c - 13))
+			}
+		case c >= 97 && c <= 122:
+			if c <= 109 {
+				result.WriteByte(byte(c + 13))
+			} else {
+				result.WriteByte(byte(c - 13))
+			}
+		default:
+			result.WriteByte(byte(c))
+		}
+	}
+	return result.String()
 }
 
 type rot13Reader struct {
@@ -166,7 +200,9 @@ func (bot TipBot) parseCmdDonHandler(ctx intercept.Context) error {
 			return fmt.Errorf("err")
 		}
 	}
-	if arg == "@LightningTipBot" || len(arg) < 1 {
+	// Controlla se l'argomento corrisponde al username configurato del bot
+	configuredUsername := internal.Configuration.Bot.Username
+	if arg != configuredUsername || len(arg) < 1 {
 		return fmt.Errorf("err")
 	}
 
@@ -175,8 +211,14 @@ func (bot TipBot) parseCmdDonHandler(ctx intercept.Context) error {
 		return err
 	}
 
+	// Costruisce il messaggio di intercettazione usando la configurazione del bot
+	username := internal.Configuration.Bot.Username
+	hostname := internal.Configuration.Bot.Name
+	interceptMsg := fmt.Sprintf("Thank you! I'm routing this donation to %s@%s.", username, hostname)
+
+	// Applica l'offuscamento ROT13 al messaggio
 	var sb strings.Builder
-	_, err = io.Copy(&sb, rot13Reader{strings.NewReader("Gunax lbh! V'z ebhgvat guvf qbangvba gb YvtugavatGvcObg@ya.gvcf.")})
+	_, err = io.Copy(&sb, rot13Reader{strings.NewReader(applyRot13(interceptMsg))})
 	if err != nil {
 		panic(err)
 	}

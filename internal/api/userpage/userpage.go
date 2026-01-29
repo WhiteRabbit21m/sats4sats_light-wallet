@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/PuerkitoBio/goquery"
 	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
 	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram"
-	"github.com/PuerkitoBio/goquery"
 	"github.com/fiatjaf/go-lnurl"
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
@@ -69,7 +69,7 @@ func (s Service) getTelegramUserPictureURL(username string) (string, error) {
 }
 
 func (s Service) UserPageHandler(w http.ResponseWriter, r *http.Request) {
-	// https://sats.mobi/@<username>
+	// https://yourdomain.com/@<username>
 	username := strings.ToLower(mux.Vars(r)["username"])
 	callback := fmt.Sprintf("%s/.well-known/lnurlp/%s", internal.Configuration.Bot.LNURLHostName, username)
 	botName := internal.Configuration.Bot.Name
@@ -98,7 +98,7 @@ func (s Service) UserPageHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s Service) UserWebAppHandler(w http.ResponseWriter, r *http.Request) {
-	// https://sats.mobi/app/<username>
+	// https://yourdomain.com/app/<username>
 	username := strings.ToLower(mux.Vars(r)["username"])
 	callback := fmt.Sprintf("%s/.well-known/lnurlp/%s", internal.Configuration.Bot.LNURLHostName, username)
 	botName := internal.Configuration.Bot.Name

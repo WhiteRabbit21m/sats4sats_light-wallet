@@ -6,6 +6,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
 	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )
@@ -58,7 +59,7 @@ func NewTransaction(bot *TipBot, from *lnbits.User, to *lnbits.User, amount int6
 		FromId:   from.Telegram.ID,
 		ToId:     to.Telegram.ID,
 		Amount:   amount,
-		Memo:     "Powered by @LightningTipBot",
+		Memo:     fmt.Sprintf("Powered by %s", internal.Configuration.Bot.Username),
 		Time:     time.Now(),
 		Success:  false,
 	}

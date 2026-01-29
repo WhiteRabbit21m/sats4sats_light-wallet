@@ -9,6 +9,7 @@ import (
 
 	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
 	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
 
 	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime/mutex"
@@ -31,17 +32,18 @@ var (
 )
 
 func helpSendUsage(ctx context.Context, errormsg string) string {
+	exampleUser := internal.Configuration.Bot.Username
 	if len(errormsg) > 0 {
-		return fmt.Sprintf(Translate(ctx, "sendHelpText"), fmt.Sprintf("%s", errormsg))
+		return fmt.Sprintf(Translate(ctx, "sendHelpText"), fmt.Sprintf("%s", errormsg), exampleUser)
 	} else {
-		return fmt.Sprintf(Translate(ctx, "sendHelpText"), "")
+		return fmt.Sprintf(Translate(ctx, "sendHelpText"), "", exampleUser)
 	}
 }
 
 func (bot *TipBot) SendCheckSyntax(ctx context.Context, m *tb.Message) (bool, string) {
 	arguments := strings.Split(m.Text, " ")
 	if len(arguments) < 2 {
-		return false, fmt.Sprintf(Translate(ctx, "sendSyntaxErrorMessage"), GetUserStrMd(bot.Telegram.Me))
+		return false, fmt.Sprintf(Translate(ctx, "sendSyntaxErrorMessage"), GetUserStrMd(bot.Telegram.Me), internal.Configuration.Bot.Name)
 	}
 	return true, ""
 }
@@ -132,7 +134,7 @@ func (bot *TipBot) sendHandler(ctx intercept.Context) (intercept.Context, error)
 
 	// ASSUME INTERNAL SEND TO TELEGRAM USER
 	if err != nil || amount < 1 {
-		errmsg := fmt.Sprintf("[/send] Error: Send amount not valid.")
+		errmsg := "[/send] Error: Send amount not valid."
 		log.Warnln(errmsg)
 		// immediately delete if the amount is bullshit
 		NewMessage(ctx.Message(), WithDuration(0, bot))

@@ -85,7 +85,7 @@ func (bot TipBot) handleInlineSendQuery(ctx intercept.Context) (intercept.Contex
 	}
 
 	// check whether the 3rd argument is a username
-	// command is "@LightningTipBot send 123 @to_user This is the memo"
+	// command is "@YourBot send 123 @to_user This is the memo"
 	memo_argn := 2 // argument index at which the memo starts, will be 3 if there is a to_username in command
 	toUserDb := &lnbits.User{}
 	to_SpecificUser := false
