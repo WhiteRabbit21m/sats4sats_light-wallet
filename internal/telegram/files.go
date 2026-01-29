@@ -1,11 +1,12 @@
 package telegram
 
 import (
+	"time"
+
 	"github.com/massmux/SatsMobiBot/internal/errors"
 	"github.com/massmux/SatsMobiBot/internal/runtime"
 	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
-	"time"
 )
 
 func (bot *TipBot) fileHandler(ctx intercept.Context) (intercept.Context, error) {
@@ -22,7 +23,6 @@ func (bot *TipBot) fileHandler(ctx intercept.Context) (intercept.Context, error)
 			ticker.Do(func() {
 				ResetUserState(user, bot)
 				// removing ticker asap done
-				bot.shopViewDeleteAllStatusMsgs(ctx, user)
 				runtime.RemoveTicker(user.ID)
 			})
 		} else {

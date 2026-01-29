@@ -26,22 +26,7 @@ database:
  db_path: "data/bot.db"  
  buntdb_path: "data/bunt.db"  
  transactions_path: "data/transactions.db"  
- shop_buntdb_path: "data/shop.db"  
  groupsdb_path: "data/groups.db"  
-generate:  
- open_ai_bearer_token: ""  
- dalle_key: ""  
- dalle_price: 1000  
- worker: 0
 nostr:  
  private_key: "YOUR_NOSTR_HEX_PRIVKEY"
-pos:
- currency: "EUR"
- max_balance: 1000000
-voucherbot:
- endpoint: "api.gwoq.com"
- api_key: "YOUR_VOUCHERBOT_APIKEY"
- purchase_type: "LA-B"
- default_amount: "100"
- currency: "EUR"
 

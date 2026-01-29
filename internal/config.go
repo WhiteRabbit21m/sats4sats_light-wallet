@@ -10,38 +10,15 @@ import (
 )
 
 var Configuration = struct {
-	Bot        BotConfiguration        `yaml:"bot"`
-	Telegram   TelegramConfiguration   `yaml:"telegram"`
-	Database   DatabaseConfiguration   `yaml:"database"`
-	Lnbits     LnbitsConfiguration     `yaml:"lnbits"`
-	Generate   GenerateConfiguration   `yaml:"generate"`
-	Nostr      NostrConfiguration      `yaml:"nostr"`
-	Pos        PosConfiguration        `yaml:"pos"`
-	Voucherbot VoucherbotConfiguration `yaml:"voucherbot"`
+	Bot      BotConfiguration      `yaml:"bot"`
+	Telegram TelegramConfiguration `yaml:"telegram"`
+	Database DatabaseConfiguration `yaml:"database"`
+	Lnbits   LnbitsConfiguration   `yaml:"lnbits"`
+	Nostr    NostrConfiguration    `yaml:"nostr"`
 }{}
-
-type PosConfiguration struct {
-	Currency    string `yaml:"currency"`
-	Max_balance int64  `yaml:"max_balance"`
-}
-
-type VoucherbotConfiguration struct {
-	Endpoint      string `yaml:"endpoint"`
-	ApiKey        string `yaml:"api_key"`
-	PurchaseType  string `yaml:"purchase_type"`
-	DefaultAmount string `yaml:"default_amount"`
-	Currency      string `yaml:"currency"`
-}
 
 type NostrConfiguration struct {
 	PrivateKey string `yaml:"private_key"`
-}
-
-type GenerateConfiguration struct {
-	OpenAiBearerToken string `yaml:"open_ai_bearer_token"`
-	DalleKey          string `yaml:"dalle_key"`
-	DallePrice        int64  `yaml:"dalle_price"`
-	Worker            int    `yaml:"worker"`
 }
 
 type SocksConfiguration struct {
@@ -71,7 +48,6 @@ type TelegramConfiguration struct {
 
 type DatabaseConfiguration struct {
 	DbPath           string `yaml:"db_path"`
-	ShopBuntDbPath   string `yaml:"shop_buntdb_path"`
 	BuntDbPath       string `yaml:"buntdb_path"`
 	TransactionsPath string `yaml:"transactions_path"`
 	GroupsDbPath     string `yaml:"groupsdb_path"`

@@ -60,7 +60,7 @@ infoButtonMessage = """Info"""
 # AIDE
 
 helpMessage = """⚡️ *SatsMobi*
-_Ce bot est un Bitcoin Lightning Wallet qui permet d'envoyer des Tips sur Telegram et gérer les cartes NFC.
+_Ce bot est un Bitcoin Lightning Wallet qui permet d'envoyer des Tips sur Telegram.
 Il fonctionne avec Nostr. Le montant maximum autorisé est de 300K Sats. Tapez /basics pour plus d'info et les conditions d'utilisation._
 
 %s
@@ -71,8 +71,6 @@ Il fonctionne avec Nostr. Le montant maximum autorisé est de 300K Sats. Tapez /
 */send*: Envoyer un pourboire à un utilisateur: `/send <montant> @user ou user@sats.mobi [<memo>]`
 */invoice*: Recevoir avec Lightning : `/invoice <montant> [<memo>]`
 */pay*: Payer avec Lightning : `/pay <invoice>`
-*/cashback*: QRCODE pour recevoir cashback.
-*/activatecard*: Demande d'activation de la carte SatsMobi NFC `/activatecard <CardID>`
 */advanced*: Fonctionnalités avancées.
 */help*: Aide."""
 
@@ -121,11 +119,7 @@ advancedMessage = """%s
 */nostr*: Connect to Nostr: `/nostr` première fois: `/nostr help`
 */faucet*: Créer un faucet: `/faucet <capacité> <par_utilisateur>`
 */tipjar*: Créer un tipjar: `/tipjar <capacité> <par_utilisateur>`
-*/pos*: Obtenir un POS: `/pos`
-*/scrub*: Activer/désactiver Scrub: `/scrub <Destination-LN-Address|off>`
 */group*: Créer tickets pour groupe: `/group add <mygroup> [<ticket_price>]`
-*/shop*: Voir les shops: `/shop` or `/shop <user/shop_id>`
-*/buy*: Acheter Sats en paiant avec Fiat `/buy <sending-iban-code>`
 """
 
 # GENERIC
@@ -146,12 +140,6 @@ startNoUsernameMessage    = """☝️ Vous n'avez pas encore de nom d'utilisateu
 
 balanceMessage      = """👑 *Votre solde:* %d sat"""
 balanceErrorMessage = """🚫 Impossible de récupérer votre solde. Essayez à nouveau."""
-balanceOverMax      = """❗️ Vous avez dépassé le solde maximum autorisé. Veuillez retirer des fonds de votre Portefeuille jusqu'à ce que vous atteigniez le solde maximum autorisé. Le solde maximum autorisé est de
-
-*%s Sats*
-
-Vous êtes tenu de maintenir votre solde en permanence en dessous de ce seuil. Merci de votre compréhension.
-"""
 
 
 # TIP
@@ -219,120 +207,6 @@ payHelpText                  = """📖 Oops, cela n'a pas fonctionné. %s
 *Usage:* `/pay <invoice>`
 *Exemple:* `/pay lnbc20n1psscehd...`"""
 
-activatecardHelpText         = """📖 Oops, qui n'a pas fonctionné. N'oubliez pas le CardID (code de 14 caractères) après la commande
-
-*Usage:* `/activatecard <cardid>`
-*Example:* `/activatecard 04B4596A926980`"""
-
-activateScrubHelpText         = """📖 Oops, qui n'a pas fonctionné. N'oubliez pas le parametre après la commande
-
-*Usage:* `/scrub <Lighting-address|off>`
-*Example:* `/scrub someuser@getalby.com` envoyer les fonds à cette adresse ou `/scrub off` desactive le Scrub service"""
-
-# BUY
-
-buyHelpText         = """📖 Oops, qui n'a pas fonctionné. N'oubliez pas le parametre après la commande
-
-*Usage:* `/buy <sending-iban-code>`
-*Example:* `/buy RO98PORL6425279776334378` vous enverrez le montant en fiats de cet IBAN aux coordonnées fournies pour obtenir des Sats."""
-
-buyHelpConfirmOrder         = """📖 Oops, qui n'a pas fonctionné. N'oubliez pas le parametre après la commande
-
-*Usage:* `/confirm <order-id>`
-*Example:* `/confirm 613878112H20240611943520` vous confirmez que vous avez effectué le paiement de cette commande par virement bancaire."""
-
-buyHelpCancelOrder         = """📖 Oops, qui n'a pas fonctionné. N'oubliez pas le parametre après la commande
-
-*Usage:* `/cancel <order-id>`
-*Example:* `/cancel 613878112H20240611943520` vous confirmez que vous annulez cette commande. Cette action ne peut pas être annulée."""
-
-invalidIBANHelpText         = """📖 OOops, qui n'a pas fonctionné. Veuillez fournir un code IBAN valide.
-
-Il s'agit de l'IBAN du compte bancaire fiat d'où provient votre paiement. Il doit s'agir d'un code IBAN SEPA valide."""
-
-buyCmdInvoked = """
-*COMMANDE BUY INVOQUÉE*
-
-Utilisateur : %s
-IBAN : %s
-Destinataire : %s
-Montant fiat : %s
-
-Veuillez attendre la confirmation de la commande.
-"""
-
-buyOrderNotAccepted = """
-❌*Commande NON acceptée*
-
-Causes possibles :
-
-- Première commande supérieure à 100 %s
-- IBAN non valide
-- Seuil journalier dépassé
-- Une autre commande est encore en attente
-
-Vérifier les détails et réessayer
-"""
-
-buyOrderConfirmation = """
-✔️*COMMANDE REÇUE*
-Date : %s
-
-Montant Fiat : %s %s
-Type d'ordre : Lightning Push to Wallet
-
-Coordonnées du virement bancaire SEPA
-Bénéficiaire : `%s`
-Adresse : `%s`
-Banque : `%s`
-IBAN : `%s`
-BIC : `%s`
-Montant net à payer : %s %s
-Motif du paiement : `%s`
-
-De l'IBAN : %s
-Orderid : `%s`
-
-*Maintenant, confirmation obligatoire du paiement ou annulation*
-`/confirm %s` (CONFIRMER LE PAIEMENT)
-`/cancel %s` (ANNULER CETTE COMMANDE)
-"""
-
-
-
-# NFC CARDS
-
-
-activatecardSendText                  = """
-✅NFC Card activation requested
-
-Vous avez demandé l'activation de votre carte %s à votre utilisateur Telegram. Cette fonction n'est disponible que pour les cartes NFC SatsMobi, pas pour les cartes génériques.
-
-❗️Veuillez noter que l'activation prendra au moins 24 heures. Une fois l'activation terminée, vous recevrez un message de confirmation"""
-
-activatecardAdminSendText                  = """
-🗝 Activatecard command Invoked
-
-Run on node:
-`cardmove %s %s`
-
-Notification
-`/confirmcard %s %s`
-
-#activatecard
-"""
-confirmCardAdminSendText                  = """
-✅Activation confirmée
-
-Votre carte NFC ID
-
-%s
-
-a été activée avec succès, sur votre compte Telegram!
-"""
-
-
-
 # DONATE
 
 donationSuccess          = """🙏 Merci pour votre donation !."""
@@ -354,7 +228,6 @@ photoQrRecognizedMessage = """✅ QR code:
 
 # LNURL
 
-cashbackReceiveInfoText        = """Mon QRCODE personnel pour recevoir des Cashback."""
 lnurlReceiveInfoText           = """👇 Vous pouvez utiliser cet LNURL pour recevoir des paiements."""
 lnurlResolvingUrlMessage       = """🧮 Recherche de l'adresse..."""
 lnurlGettingUserMessage        = """🧮 Préparation du paiement..."""
@@ -366,39 +239,6 @@ lnurlHelpText                  = """📖 Oops, cela n'a pas fonctionné. %s
 
 *Usage:* `/lnurl [montant] <lnurl>`
 *Exemple:* `/lnurl LNURL1DP68GUR...`"""
-
-# POS
-
-posSendText = """*Votre POS*
-
-Ouvrez simplement ce lien où vous voulez. Le paiement que vous obtenez avec ce POS sera automatiquement disponible sur votre compte.
-
-Votre POS activé :
-
-User: %s
-%stpos/%s
-
-"""
-
-# SCRUB
-
-scrubSendText = """↗️*Scrub Service ON*
-
-Le service Scrub a été ACTIVE' sur votre compte. Il transmettra à l'adresse Lightning que vous avez spécifiée tous les paiements entrant dans votre compte. Il est de votre responsabilité de fournir une adresse Lightning correcte dont vous êtes le propriétaire.
-Il s'agit de vos données d'activation :
-
-User: %s
-Destination Lightning address: %s
-
-Pour modifier l'adresse de destination, il suffit de réexécuter la commande avec une adresse Lightning différente
-"""
-
-scrubOffSendText = """↘️*Scrub Service OFF*
-
-Le service Scrub a été SUPPRIMÉ. Cela signifie que les paiements entrants ne seront plus transférés à l'extérieur. Il suffit de rappeler la commande avec une adresse de destination pour la rétablir.
-
-User: %s
-"""
 
 # LINK
 

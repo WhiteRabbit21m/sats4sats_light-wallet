@@ -28,10 +28,7 @@ const (
 )
 
 const (
-	NoShopError TipBotErrorType = 3000 + iota
-	NotShopOwnerError
-	ShopNoOwnerError
-	ItemIdMismatchError
+	ItemIdMismatchError TipBotErrorType = 3000 + iota
 )
 
 var errMap = map[TipBotErrorType]TipBotError{
@@ -41,10 +38,7 @@ var errMap = map[TipBotErrorType]TipBotError{
 	InvalidAmountPerUserError: invalidAmount,
 	InvalidAmountError:        invalidAmountPerUser,
 	NoPrivateChatError:        noPrivateChat,
-	ShopNoOwnerError:          shopNoOwner,
-	NotShopOwnerError:         notShopOwner,
 	MaxReachedError:           maxReached,
-	NoShopError:               noShop,
 	SelfPaymentError:          selfPayment,
 	NoPhotoError:              noPhoto,
 	ItemIdMismatchError:       itemIdMismatch,
@@ -61,10 +55,7 @@ var (
 	invalidAmount        = TipBotError{Err: fmt.Errorf("invalid amount")}
 	invalidAmountPerUser = TipBotError{Err: fmt.Errorf("invalid amount per user")}
 	noPrivateChat        = TipBotError{Err: fmt.Errorf("no private chat")}
-	shopNoOwner          = TipBotError{Err: fmt.Errorf("shop has no owner")}
-	notShopOwner         = TipBotError{Err: fmt.Errorf("user is not shop owner")}
 	maxReached           = TipBotError{Err: fmt.Errorf("maximum reached")}
-	noShop               = TipBotError{Err: fmt.Errorf("user has no shop")}
 	selfPayment          = TipBotError{Err: fmt.Errorf("can't pay yourself")}
 	noPhoto              = TipBotError{Err: fmt.Errorf("no photo in message")}
 	itemIdMismatch       = TipBotError{Err: fmt.Errorf("item id mismatch")}

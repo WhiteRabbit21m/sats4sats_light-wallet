@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/satdress"
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcec/v2/ecdsa"
+	"github.com/massmux/SatsMobiBot/internal/satdress"
 
 	"github.com/imroc/req"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
@@ -66,14 +66,6 @@ const (
 	UserHasEnteredAmount
 	UserEnterUser
 	UserHasEnteredUser
-	UserEnterShopTitle
-	UserStateShopItemSendPhoto
-	UserStateShopItemSendTitle
-	UserStateShopItemSendDescription
-	UserStateShopItemSendPrice
-	UserStateShopItemSendItemFile
-	UserEnterShopsDescription
-	UserEnterDallePrompt
 )
 
 type UserStateKey int

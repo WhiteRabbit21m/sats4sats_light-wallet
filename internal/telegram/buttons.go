@@ -3,12 +3,12 @@ package telegram
 import (
 	"context"
 	"fmt"
+	"strings"
+
 	"github.com/massmux/SatsMobiBot/internal"
 	"github.com/massmux/SatsMobiBot/internal/lnbits"
 	log "github.com/sirupsen/logrus"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
-	"strings"
-	"time"
 )
 
 // we can't use space in the label of buttons, because string splitting will mess everything up.
@@ -23,7 +23,6 @@ const (
 	MainMenuCommandBalance = "Balance"
 	MainMenuCommandInvoice = "⚡️ Invoice"
 	MainMenuCommandHelp    = "📖 Help"
-	MainMenuCommandPosApp  = "💳 PosApp"
 	MainMenuCommandSend    = "⤴️"
 	SendMenuCommandEnter   = "👤 Enter"
 )
@@ -31,7 +30,6 @@ const (
 var (
 	mainMenu           = &tb.ReplyMarkup{ResizeKeyboard: true}
 	btnHelpMainMenu    = mainMenu.Text(MainMenuCommandHelp)
-	btnPosAppMainMenu  = mainMenu.Text(MainMenuCommandPosApp)
 	btnWebAppMainMenu  = mainMenu.Text(MainMenuCommandWebApp)
 	btnSendMainMenu    = mainMenu.Text(MainMenuCommandSend)
 	btnBalanceMainMenu = mainMenu.Text(MainMenuCommandBalance)
@@ -47,7 +45,7 @@ func init() {
 	mainMenu.Reply(
 		mainMenu.Row(btnBalanceMainMenu),
 		// mainMenu.Row(btnInvoiceMainMenu, btnWebAppMainMenu, btnSendMainMenu, btnHelpMainMenu), // TODO: fix btnSendMainMenu
-		mainMenu.Row(btnInvoiceMainMenu, btnWebAppMainMenu, btnPosAppMainMenu),
+		mainMenu.Row(btnInvoiceMainMenu, btnWebAppMainMenu),
 		//mainMenu.Row(btnInvoiceMainMenu, btnWebAppMainMenu, btnHelpMainMenu),
 	)
 }
@@ -88,15 +86,6 @@ func (bot *TipBot) appendWebAppLinkToButton(btn *tb.Btn, user *lnbits.User) {
 	}
 }
 
-// appendPosAppLinkToButton adds a posApp object to a Button with the user's webapp page
-func (bot *TipBot) appendPosAppLinkToButton(btn *tb.Btn, user *lnbits.User) {
-	posManager := lnbits.Tpos{ApiKey: user.Wallet.Adminkey, LnbitsPublicUrl: internal.Configuration.Lnbits.LnbitsPublicUrl}
-	createPos := posManager.PosCreate(user.Telegram.Username, internal.Configuration.Pos.Currency)
-	time.Sleep(1 * time.Second)
-	posUrl := fmt.Sprintf("%stpos/%s", internal.Configuration.Lnbits.LnbitsPublicUrl, createPos)
-	btn.WebApp = &tb.WebAppInfo{Url: posUrl}
-}
-
 // mainMenuBalanceButtonUpdate updates the balance button in the mainMenu
 func (bot *TipBot) mainMenuBalanceButtonUpdate(to int64) {
 	var user *lnbits.User
@@ -117,11 +106,10 @@ func (bot *TipBot) mainMenuBalanceButtonUpdate(to int64) {
 		}
 
 		bot.appendWebAppLinkToButton(&btnWebAppMainMenu, user)
-		bot.appendPosAppLinkToButton(&btnPosAppMainMenu, user)
 		mainMenu.Reply(
 			mainMenu.Row(btnBalanceMainMenu),
 			// mainMenu.Row(btnInvoiceMainMenu, btnWebAppMainMenu, btnSendMainMenu, btnHelpMainMenu), // TODO: fix btnSendMainMenu
-			mainMenu.Row(btnInvoiceMainMenu, btnWebAppMainMenu, btnPosAppMainMenu),
+			mainMenu.Row(btnInvoiceMainMenu, btnWebAppMainMenu),
 			//mainMenu.Row(btnInvoiceMainMenu, btnWebAppMainMenu, btnHelpMainMenu),
 		)
 	}

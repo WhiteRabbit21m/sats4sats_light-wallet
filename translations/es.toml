@@ -66,7 +66,7 @@ payButtonEmoji = """💸"""
 # HELP
 
 helpMessage = """⚡️ *SatsMobi*
-_Esta es una Cartera Bitcoin Lightning que puede enviar y recibir propinas en Telegram y gestionar Tarjetas NFC. Nostr habilitado.
+_Esta es una Cartera Bitcoin Lightning que puede enviar y recibir propinas en Telegram. Nostr habilitado.
 La cantidad máxima permitida es de 300K de Sats. Pulsa /basics para más información y Términos de Servicio._
 
 %s
@@ -77,8 +77,6 @@ La cantidad máxima permitida es de 300K de Sats. Pulsa /basics para más inform
 */send*: Enviar fondos a un usuario: `/send <amount> @user or user@sats.mobi [<memo>]`
 */invoice*: Recibir con Lightning: `/invoice <amount> [<memo>]`
 */pay*: Pague con Lightning: `/pay <invoice>`
-*/cashback*: QRCODE para recibir cashback.
-*/activatecard*: Solicitar la activación de una tarjeta NFC SatsMobi  `/activatecard <CardID>`
 */advanced*: Funciones avanzadas.
 */help*: Lee esta ayuda."""
 
@@ -126,11 +124,7 @@ advancedMessage = """%s
 */nostr*: Conecta con Nostr: `/nostr` first time: `/nostr help`
 */faucet*: Crea un faucet: `/faucet <capacity> <per_user>`
 */tipjar*: Create a tipjar: `/tipjar <capacity> <per_user>`
-*/pos*: Prepare su POS: `/pos`
-*/scrub*: Activar/Desactivar Scrub: `/scrub <Destination-LN-Address|off>`
 */group*: Funciones de chat en grupo: `/group`
-*/shop*: Buscar tiendas: `/shop` o `/shop <user/shop_id>`
-*/buy*: Comprar Sats con Fiat `/buy <sending-iban-code>`
 """
 
 # GENERIC
@@ -152,12 +146,6 @@ startNoUsernameMessage    = """☝️ Parece que aún no tienes un @nombredeusua
 
 balanceMessage      = """👑 *Tu saldo:* %d sat"""
 balanceErrorMessage = """🚫 No se ha podido recuperar su saldo. Vuelva a intentarlo más tarde."""
-balanceOverMax      = """❗️ Ha superado el saldo máximo permitido. Por favor, retire fondos de su Cartera hasta alcanzar el saldo máximo permitido. El saldo máximo permitido es
-
-*%s Sats*
-
-Debe mantener su saldo siempre por debajo de este umbral. Gracias por su comprensión.
-"""
 
 # TIP
 
@@ -225,113 +213,6 @@ payHelpText                  = """📖 Oops, eso no funcionó. %s
 *Usage:* `/pay <invoice>`
 *Example:* `/pay lnbc20n1psscehd...`"""
 
-activatecardHelpText         = """📖 Oops, eso no funcionó. No olvide el CardID (código de 14 caracteres) después del comando
-
-*Usage:* `/activatecard <cardid>`
-*Example:* `/activatecard 04B4596A926980`"""
-
-activateScrubHelpText         = """📖 Oops, eso no funcionó. No olvides el argumento después del comando
-*Usage:* `/scrub <Lighting-address|off>`
-*Example:* `/scrub someuser@getalby.com` enviar fondos a esa dirección o `/scrub off` desactivar el servicio Scrub"""
-
-# BUY
-
-buyHelpText         = """📖 Oops, eso no funcionó. No olvides el argumento después del comando
-
-*Usage:* `/buy <sending-iban-code>`
-*Example:* `/buy RO98PORL6425279776334378` enviará la cantidad fiat desde ese IBAN a las coordenadas proporcionadas para obtener Sats."""
-
-buyHelpConfirmOrder         = """📖 Oops, eso no funcionó. No olvides el argumento después del comando
-
-*Usage:* `/confirm <order-id>`
-*Example:* `/confirm 613878112H20240611943520` confirma que ha efectuado el pago de este pedido mediante transferencia bancaria."""
-
-buyHelpCancelOrder         = """📖 Oops, eso no funcionó. No olvides el argumento después del comando
-*Usage:* `/cancel <order-id>`
-*Example:* `/cancel 613878112H20240611943520` confirma que cancela este pedido. Esta acción no se puede revertir."""
-
-invalidIBANHelpText         = """📖 No ha funcionado. Por favor, proporcione un código IBAN válido.
-
-Es el IBAN de la cuenta bancaria de la que procede el pago. Debe ser un código IBAN SEPA válido."""
-
-buyCmdInvoked = """
-*ORDEN DE COMPRA INVOCADA*
-
-Usuario: %s
-IBAN: %s
-Beneficiario: %s
-Importe fiat: %s
-
-Espere la confirmación del pedido.
-"""
-
-buyOrderNotAccepted = """
-❌*Pedido NO aceptado*
-
-Posibles causas:
-
-- Primer pedido superior a 100 %s
-- IBAN no válido
-- Superación del umbral diario
-- Otra orden sigue pendiente
-
-Compruebe los detalles e inténtelo de nuevo
-"""
-
-buyOrderConfirmation = """
-✔️*PEDIDO RECIBIDO*
-Fecha: %s
-
-Importe Fiat: %s %s
-Tipo de orden: Lightning Push to Wallet
-
-Información para Transferencia SEPA
-Beneficiario: `%s`
-Dirección: `%s`
-Banco: `%s`
-IBAN: `%s`
-BIC: `%s`
-Monto neto a pagar: %s %s
-Motivo: `%s`
-
-De IBAN: %s
-Orderid: `%s`
-
-*Ahora debe confirmar o cancelar el pago*
-`/confirm %s` (CONFIRMAR EL PAGO)
-`/cancel %s` (CANCELAR LA ORDEN)
-"""
-
-# NFC CARDS
-
-activatecardSendText                  = """
-✅Solicistaste una activación de tarjeta NFC
-
-Tu solicitud  de activación de tarjeta %s fue recibida para tu nombre de usuario. Esta opción solamente está disponible para tarjetas SatsMobi, no para las genéricas.
-
-❗️Ten en cuenta que la activación tardará al menos 24 horas. Recibirás un mensaje de confirmación cuando tu tarjeta esté lista."""
-
-activatecardAdminSendText                  = """
-🗝Activatecard command Invoked
-
-Run on node:
-`cardmove %s %s`
-
-Notification
-`/confirmcard %s %s`
-
-#activatecard
-"""
-confirmCardAdminSendText                  = """
-✅Activación confirmada
-
-Tu tarjeta NFC ID
-
-`%s`
-
-ha sido activada correctamente!
-"""
-
 # DONATE
 
 donationSuccess          = """🙏 Gracias por tu donación."""
@@ -353,7 +234,6 @@ photoQrRecognizedMessage = """✅ Código QR:
 
 # LNURL
 
-cashbackReceiveInfoText        = """Mi código QR personal para Cashback."""
 lnurlReceiveInfoText           = """👇 Puedes usar esta LNRUL estática para recibir pagos."""
 lnurlResolvingUrlMessage       = """🧮 Resolviendo dirección..."""
 lnurlGettingUserMessage        = """🧮 Preparando pago..."""
@@ -380,40 +260,6 @@ lnurlPreparingWithdraw        = """🧮 Preparando retiro..."""
 lnurlWithdrawFailed           = """🚫 Retiro fallido."""
 lnurlWithdrawCancelled        = """🚫 Retiro cancelado."""
 lnurlWithdrawSuccess          = """✅ Retiro completado."""
-
-# POS
-
-posSendText = """*Tu POS*
-
-Abre este link en donde quieras. Los pagos que recibas a traves del POS se enviarán automáticamente a tu cuenta
-
-Este es tu POS:
-
-Usuario: %s
-%stpos/%s
-
-"""
-
-# SCRUB
-
-scrubSendText = """↗️*Reenvío activado*
-
-El reenvío fue ACTIVADO en tu cuenta. Esto reenviará cualquier pago recibido a la  dirección Lightning especificada.
-
-Detalles:
-
-Usuario: %s
-Dirección Lightning de destino: %s
-
-Si deseas cambiar la dirección de destino, vuelve a invocar el comando con una dirección diferente
-"""
-
-scrubOffSendText = """↘️*Reenvío desactivado*
-
-El servidio de reenvío fue DESACTIVADO. Ya no se reenviarán los pagos recibido.
-
-Usuario: %s
-"""
 
 # LINK
 
@@ -557,7 +403,3 @@ Para entrar al grupo, habla con %s y escribele `/join <migrupo>`.
 Para admins (en el grupot): `/group add <migrupo> [<precio_ticket>]`\nEjemplo: `/group add TheBestBitcoinGroup 1000`
 Para usuarios (en privadot): `/join <migrupo>`\nEjemplo: `/join TheBestBitcoinGroup`"""
 
-# DALLE GENERATE
-generateDalleHelpMessage        = """Genera imágenes usando OpenAI DALLE 2.\nUsage: `/generate <prompt>`\nPrecio: 1000 sat"""
-generateDallePayInvoiceMessage  = """Paga esta factura para generar 4 imágenes 👇"""
-generateDalleGeneratingMessage  = """Se están generando tus imágenes. Por favor aguarda..."""

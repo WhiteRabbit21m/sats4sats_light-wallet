@@ -2,8 +2,6 @@ package telegram
 
 import (
 	"fmt"
-	"github.com/massmux/SatsMobiBot/internal"
-	"strconv"
 
 	"github.com/massmux/SatsMobiBot/internal/errors"
 	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
@@ -45,13 +43,6 @@ func (bot *TipBot) balanceHandler(ctx intercept.Context) (intercept.Context, err
 
 	log.Infof("[/balance] %s's balance: %d sat\n", usrStr, balance)
 	bot.trySendMessage(ctx.Sender(), fmt.Sprintf(Translate(ctx, "balanceMessage"), balance))
-
-	// check user balance. if more than Maximum allowed (in config) then send a warning message
-	if balance >= internal.Configuration.Pos.Max_balance {
-		balanceWarningMessage := fmt.Sprintf(Translate(ctx, "balanceOverMax"), strconv.FormatInt(internal.Configuration.Pos.Max_balance, 10))
-		bot.trySendMessage(ctx.Sender(), balanceWarningMessage)
-		log.Infof("[/balance] User %s over max balance: %d Sats\n", usrStr, balance)
-	}
 
 	return ctx, nil
 }

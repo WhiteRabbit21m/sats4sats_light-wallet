@@ -25,7 +25,6 @@ import (
 type TipBot struct {
 	DB       *Databases
 	Bunt     *storage.DB
-	ShopBunt *storage.DB
 	Telegram *tb.Bot
 	Client   *lnbits.Client
 	limiter  map[string]limiter.Limiter
@@ -51,7 +50,6 @@ func NewBot() TipBot {
 		DB:       dbs,
 		Client:   lnbits.NewClient(internal.Configuration.Lnbits.AdminKey, internal.Configuration.Lnbits.Url),
 		Bunt:     createBunt(internal.Configuration.Database.BuntDbPath),
-		ShopBunt: createBunt(internal.Configuration.Database.ShopBuntDbPath),
 		Telegram: newTelegramBot(),
 		Cache:    Cache{GoCacheStore: gocacheStore},
 	}

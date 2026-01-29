@@ -8,15 +8,16 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
-	"github.com/massmux/SatsMobiBot/internal/network"
-	log "github.com/sirupsen/logrus"
-	"github.com/tidwall/gjson"
-	"github.com/tidwall/sjson"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
+
+	"github.com/massmux/SatsMobiBot/internal/network"
+	log "github.com/sirupsen/logrus"
+	"github.com/tidwall/gjson"
+	"github.com/tidwall/sjson"
 )
 
 // Much of this is from github.com/fiatjaf/makeinvoice
@@ -160,7 +161,6 @@ func MakeInvoice(params Params) (CheckInvoiceParams, error) {
 			return CheckInvoiceParams{}, err
 		}
 
-		// bot.Cache.Set(shopView.ID, shopView, &store.Options{Expiration: 24 * time.Hour})
 		checkInvoiceParams := CheckInvoiceParams{
 			Backend: params.Backend,
 			PR:      gjson.ParseBytes(b).Get("payment_request").String(),

@@ -64,7 +64,7 @@ payButtonEmoji = """💸"""
 # HELP
 
 helpMessage = """⚡️ *SatsMobi*
-_This is a Bitcoin Lightning Wallet that can send and receive tips on Telegram and manage NFC Cards. Nostr enabled.
+_This is a Bitcoin Lightning Wallet that can send and receive tips on Telegram. Nostr enabled.
 Maximum amount allowed is 300K Sats. Hit /basics for more info and Terms Of Service._
 
 %s
@@ -75,8 +75,6 @@ Maximum amount allowed is 300K Sats. Hit /basics for more info and Terms Of Serv
 */send*: Send funds to a user: `/send <amount> @user or user@sats.mobi [<memo>]`
 */invoice*: Receive with Lightning: `/invoice <amount> [<memo>]`
 */pay*: Pay with Lightning: `/pay <invoice>`
-*/cashback*: QRCODE for receiving cashback.
-*/activatecard*: Request activation of a SatsMobi NFC Card `/activatecard <CardID>`
 */advanced*: Advanced features.
 */help*: Read this help."""
 
@@ -125,11 +123,7 @@ advancedMessage = """%s
 */nostr*: Connect to Nostr: `/nostr` first time: `/nostr help`
 */faucet*: Create a faucet: `/faucet <capacity> <per_user>`
 */tipjar*: Create a tipjar: `/tipjar <capacity> <per_user>`
-*/pos*: Get your POS ready: `/pos`
-*/scrub*: Activate/Deactivate Scrub: `/scrub <Destination-LN-Address|off>`
 */group*: Group chat features: `/group`
-*/shop*: Browse shops: `/shop` or `/shop <user/shop_id>`
-*/buy*: Buy Sats with Fiat `/buy <sending-iban-code>`
 """
 
 # GENERIC
@@ -151,12 +145,6 @@ startNoUsernameMessage    = """☝️ It looks like you don't have a Telegram @u
 
 balanceMessage      = """👑 *Your balance:* %d sat"""
 balanceErrorMessage = """🚫 Could not fetch your balance. Please try again later."""
-balanceOverMax      = """❗️ You are over max balance allowed. Please move funds out from your Wallet until reaching the maximum allowed balance. Maximum allowed balance is
-
-*%s Sats*
-
-You are required to keep your balance always below this threshold. Thank you for understanding.
-"""
 
 # TIP
 
@@ -223,115 +211,6 @@ payHelpText                  = """📖 Oops, that didn't work. %s
 *Usage:* `/pay <invoice>`
 *Example:* `/pay lnbc20n1psscehd...`"""
 
-activatecardHelpText         = """📖 Oops, that didn't work. Do not forget the CardID (14 characters code) after the command
-
-*Usage:* `/activatecard <cardid>`
-*Example:* `/activatecard 04B4596A926980`"""
-
-activateScrubHelpText         = """📖 Oops, that didn't work. Do not forget the argument after the command
-
-*Usage:* `/scrub <Lighting-address|off>`
-*Example:* `/scrub someuser@getalby.com` send funds to that address or `/scrub off` disable Scrub service"""
-
-# BUY
-
-buyHelpText         = """📖 Oops, that didn't work. Do not forget the argument after the command
-
-*Usage:* `/buy <sending-iban-code>`
-*Example:* `/buy RO98PORL6425279776334378` you will send fiat amount from that IBAN to provided coordinates for getting Sats."""
-
-buyHelpConfirmOrder         = """📖 Oops, that didn't work. Do not forget the argument after the command
-
-*Usage:* `/confirm <order-id>`
-*Example:* `/confirm 613878112H20240611943520` you confirm that you made the payment for this order via bank transfer."""
-
-buyHelpCancelOrder         = """📖 Oops, that didn't work. Do not forget the argument after the command
-
-*Usage:* `/cancel <order-id>`
-*Example:* `/cancel 613878112H20240611943520` you confirm that you are cancelling this order. This action cannot be reverted."""
-
-invalidIBANHelpText         = """📖 Oops, that didn't work. Please provide a valid IBAN code.
-
-This is the IBAN of fiat bank account where your payment comes from. It must be a Valid SEPA IBAN Code."""
-
-buyCmdInvoked = """
-*BUY COMMAND INVOKED*
-
-User: %s
-IBAN: %s
-Recipient: %s
-Amount fiat: %s
-
-Please wait order confirmation.
-"""
-
-buyOrderNotAccepted = """
-❌*Order NOT accepted*
-
-Possible causes:
-
-- First order over 100 %s
-- IBAN invalid
-- Daily Threshold exceeded
-- Another order is still pending
-
-Check details and try again
-"""
-
-buyOrderConfirmation = """
-✔️*ORDER RECEIVED*
-Date: %s
-
-Fiat Amount: %s %s
-Order type: Lightning Push to Wallet
-
-SEPA Bank transfer coordinates
-Beneficiary: `%s`
-Address: `%s`
-Bank: `%s`
-IBAN: `%s`
-BIC: `%s`
-Net amount to pay: %s %s
-Payment reason: `%s`
-
-From IBAN: %s
-Orderid: `%s`
-
-*Now, mandatory confirm payment or cancel*
-`/confirm %s` (CONFIRM PAYMENT)
-`/cancel %s` (CANCEL THIS ORDER)
-"""
-
-# NFC CARDS
-
-activatecardSendText                  = """
-✅NFC Card activation requested
-
-You requested the activation for your card %s to your Telegram user. This option is available only for SatsMobi cards, not for generic ones.
-
-❗️Please note that activation will take at least 24 hours. When ready you will receive a confirmation message"""
-
-activatecardAdminSendText                  = """
-🗝Activatecard command Invoked
-
-Run on node:
-`cardmove %s %s`
-
-Notification
-`/confirmcard %s %s`
-
-#activatecard
-"""
-confirmCardAdminSendText                  = """
-✅Card Activation confirmed
-
-Your NFC card ID
-
-`%s`
-
-has been successfully activated on your Telegram Account!
-"""
-
 # DONATE
 
 donationSuccess          = """🙏 Thank you for your donation."""
@@ -353,7 +232,6 @@ photoQrRecognizedMessage = """✅ QR code:
 
 # LNURL
 
-cashbackReceiveInfoText        = """My Personal QRCODE for Cashback."""
 lnurlReceiveInfoText           = """👇 You can use this static LNURL to receive payments."""
 lnurlResolvingUrlMessage       = """🧮 Resolving address..."""
 lnurlGettingUserMessage        = """🧮 Preparing payment..."""
@@ -380,40 +258,6 @@ lnurlPreparingWithdraw        = """🧮 Preparing withdrawal..."""
 lnurlWithdrawFailed           = """🚫 Withdrawal failed."""
 lnurlWithdrawCancelled        = """🚫 Withdrawal cancelled."""
 lnurlWithdrawSuccess          = """✅ Withdrawal requested."""
-
-# POS
-
-posSendText = """*Your POS*
-
-Just open this link wherever you want. The payment you get with this POS will be automatically available on your Account
-
-This is your activated POS:
-
-User: %s
-%stpos/%s
-
-"""
-
-# SCRUB
-
-scrubSendText = """↗️*Scrub Service ON*
-
-The Scrub Service has been ACTIVATED on your account. This will forward to the Lightning address you specified, all payments coming in your account. It's your responsibility to provide a correct Lightning addreess you own.
-
-This is your activation details:
-
-User: %s
-Destination Lightning address: %s
-
-In order to change the destination address, just rerun the command with a different Lightning address
-"""
-
-scrubOffSendText = """↘️*Scrub Service OFF*
-
-The Scrub service has been DEACTIVATED. This means that incoming payments will not be forwarded outside anymore. Just call again the command with a destination address in order to set it back again.
-
-User: %s
-"""
 
 # LINK
 
@@ -557,7 +401,3 @@ To join a group, talk to %s and write in a private message `/join <mygroup>`.
 For admins (in group chat): `/group add <group_name> [<ticket_price>]`\nExample: `/group add TheBestBitcoinGroup 1000`
 For users (in private chat): `/join <group_name>`\nExample: `/join TheBestBitcoinGroup`"""
 
-# DALLE GENERATE
-generateDalleHelpMessage        = """Generate images using OpenAI DALLE 2.\nUsage: `/generate <prompt>`\nPrice: 1000 sat"""
-generateDallePayInvoiceMessage  = """Pay this invoice to generate four images 👇"""
-generateDalleGeneratingMessage  = """Your images are being generated. Please wait..."""
