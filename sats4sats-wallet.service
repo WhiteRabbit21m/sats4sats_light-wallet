@@ -1,12 +1,13 @@
 [Unit]
-Description=satsmobi
+Description=Sats4Sats Light Wallet Bot
+After=network.target
 
 [Service]
-User=dev
+Type=simple
 WorkingDirectory=/home/dev/sats4sats-wallet
 ExecStart=/home/dev/sats4sats-wallet/sats4sats-wallet
+User=dev
 Restart=always
-RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
