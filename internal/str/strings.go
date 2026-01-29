@@ -6,7 +6,7 @@ import (
 	"hash/fnv"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
 )
 
 var markdownV2Escapes = []string{"_", "[", "]", "(", ")", "~", "`", ">", "#", "+", "-", "=", "|", "{", "}", ".", "!"}

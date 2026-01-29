@@ -9,15 +9,15 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal/network"
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/network"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
-	"github.com/massmux/SatsMobiBot/internal/errors"
-	"github.com/massmux/SatsMobiBot/internal/runtime/mutex"
-	"github.com/massmux/SatsMobiBot/internal/storage"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime/mutex"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/storage"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/runtime"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime"
 
 	lnurl "github.com/fiatjaf/go-lnurl"
 	log "github.com/sirupsen/logrus"

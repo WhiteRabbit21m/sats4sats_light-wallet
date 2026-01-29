@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/runtime"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime"
 	"github.com/tidwall/buntdb"
 	"github.com/tidwall/gjson"
 

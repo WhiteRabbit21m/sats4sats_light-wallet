@@ -5,21 +5,21 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal"
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/telegram"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram"
 
 	log "github.com/sirupsen/logrus"
 	"gorm.io/gorm"
 
 	"net/http"
 
-	"github.com/massmux/SatsMobiBot/internal/storage"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/storage"
 
 	"github.com/gorilla/mux"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 
-	"github.com/massmux/SatsMobiBot/internal/i18n"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/i18n"
 )
 
 type Server struct {

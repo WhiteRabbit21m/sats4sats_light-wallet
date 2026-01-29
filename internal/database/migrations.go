@@ -3,8 +3,8 @@ package database
 import (
 	"fmt"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/str"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/str"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/gorm"
 )

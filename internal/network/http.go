@@ -9,7 +9,7 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/net/proxy"
 )

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 	log "github.com/sirupsen/logrus"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )

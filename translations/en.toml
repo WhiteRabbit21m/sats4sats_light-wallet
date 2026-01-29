@@ -178,7 +178,7 @@ sendSyntaxErrorMessage     = """Did you enter an amount and a recipient? You can
 sendHelpText               = """📖 Oops, that didn't work. %s
 
 *Usage:* `/send <amount> <user> [<memo>]`
-*Example:* `/send 1000 @SatsMobiBot I just like the bot ❤️`
+*Example:* `/send 1000 %s I just like the bot ❤️`
 """
 
 # INVOICE

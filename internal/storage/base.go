@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"github.com/massmux/SatsMobiBot/internal/runtime"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime"
 	"time"
 
 	"github.com/eko/gocache/store"

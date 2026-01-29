@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/str"
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/str"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 	"github.com/eko/gocache/store"
 	log "github.com/sirupsen/logrus"
 	tb "gopkg.in/lightningtipbot/telebot.v3"

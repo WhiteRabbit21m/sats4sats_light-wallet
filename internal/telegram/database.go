@@ -11,19 +11,19 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/database"
-	"github.com/massmux/SatsMobiBot/internal/str"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/database"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/str"
 
 	"github.com/eko/gocache/store"
 
-	"github.com/massmux/SatsMobiBot/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
 
-	"github.com/massmux/SatsMobiBot/internal/storage"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/storage"
 	"github.com/tidwall/buntdb"
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"

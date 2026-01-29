@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal/errors"
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/pkg/lightning"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/pkg/lightning"
 	log "github.com/sirupsen/logrus"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )

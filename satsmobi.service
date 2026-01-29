@@ -3,8 +3,8 @@ Description=satsmobi
 
 [Service]
 User=dev
-WorkingDirectory=/home/dev/SatsMobiBot
-ExecStart=/home/dev/SatsMobiBot/SatsMobiBot
+WorkingDirectory=/home/dev/sats4sats-wallet
+ExecStart=/home/dev/sats4sats-wallet/sats4sats-wallet
 Restart=always
 RestartSec=3
 

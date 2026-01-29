@@ -4,22 +4,22 @@ import (
 	"net/http"
 	"runtime/debug"
 
-	"github.com/massmux/SatsMobiBot/internal"
-	"github.com/massmux/SatsMobiBot/internal/api"
-	"github.com/massmux/SatsMobiBot/internal/api/admin"
-	"github.com/massmux/SatsMobiBot/internal/api/userpage"
-	"github.com/massmux/SatsMobiBot/internal/lndhub"
-	"github.com/massmux/SatsMobiBot/internal/lnurl"
-	"github.com/massmux/SatsMobiBot/internal/nostr"
-	"github.com/massmux/SatsMobiBot/internal/runtime/mutex"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/api"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/api/admin"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/api/userpage"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lndhub"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnurl"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/nostr"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime/mutex"
 
 	_ "net/http/pprof"
 
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits/webhook"
-	"github.com/massmux/SatsMobiBot/internal/price"
-	"github.com/massmux/SatsMobiBot/internal/telegram"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits/webhook"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/price"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram"
 	log "github.com/sirupsen/logrus"
 )
 

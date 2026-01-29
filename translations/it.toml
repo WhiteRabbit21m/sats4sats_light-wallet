@@ -173,7 +173,7 @@ sendSyntaxErrorMessage     = """Hai specificato un ammontare e un destinatario? 
 sendHelpText               = """📖 Ops, non ha funzionato. %s
 
 *Sintassi:* `/send <ammontare> <utente> [<memo>]`
-*Esempio:* `/send 1000 @SatsMobiBot Amo questo bot ❤️`
+*Esempio:* `/send 1000 %s Amo questo bot ❤️`
 """
 
 # INVOICE

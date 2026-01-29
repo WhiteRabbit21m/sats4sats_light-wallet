@@ -8,11 +8,11 @@ import (
 	"image/jpeg"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
-	"github.com/massmux/SatsMobiBot/internal/errors"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
 
-	"github.com/massmux/SatsMobiBot/pkg/lightning"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/pkg/lightning"
 	"github.com/makiuchi-d/gozxing"
 	"github.com/makiuchi-d/gozxing/qrcode"
 	"github.com/nfnt/resize"

@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/massmux/SatsMobiBot/internal"
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/telegram"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram"
 	"github.com/r3labs/sse"
 )
 

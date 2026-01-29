@@ -170,12 +170,12 @@ confirmSendMessage         = """Voulez-vous envoyer à %s?\n\n💸 Montant : %d 
 confirmSendAppendMemo      = """\n✉️ %s"""
 sendCancelledMessage       = """🚫 Envoi annulé."""
 errorTryLaterMessage       = """🚫 Erreur. Merci de réésayer."""
-sendSyntaxErrorMessage     = """Avez-vous ajouté un montant et un destinataire ? Utilisez la commande /send pour envoyer à un utilisateur Telegram comme %s ou bien à une adresse Lightning comme massmux@sats.mobi ."""
+sendSyntaxErrorMessage     = """Avez-vous ajouté un montant et un destinataire ? Utilisez la commande /send pour envoyer à un utilisateur Telegram comme %s ou bien à une adresse Lightning comme %s@%s ."""
 sendHelpText               = """📖 Oops, cela n'a pas fonctionné. %s
 
 *Usage:* `/send <montant> <utilisateur> [<memo>]`
 *Exemple:* `/send 1000 0x1f118c4689be07b2@sats.mobi J'adore le bot ! ❤️`
-*Exemple:* `/send 1234 massmux@sats.mobi`"""
+*Exemple:* `/send 1234 %s@%s`"""
 
 
 # INVOICE

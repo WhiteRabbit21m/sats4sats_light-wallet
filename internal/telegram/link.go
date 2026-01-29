@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
-	"github.com/massmux/SatsMobiBot/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
 
 	log "github.com/sirupsen/logrus"
 	"github.com/skip2/go-qrcode"

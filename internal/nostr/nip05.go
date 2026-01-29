@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/massmux/SatsMobiBot/internal/api"
-	db "github.com/massmux/SatsMobiBot/internal/database"
-	"github.com/massmux/SatsMobiBot/internal/telegram"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/api"
+	db "github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/database"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/gorm"
 )

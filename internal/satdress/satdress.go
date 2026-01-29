@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/network"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/network"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 	"github.com/tidwall/sjson"

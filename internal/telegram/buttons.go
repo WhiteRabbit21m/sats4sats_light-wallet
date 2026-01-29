@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal"
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
 	log "github.com/sirupsen/logrus"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )

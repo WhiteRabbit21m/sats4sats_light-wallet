@@ -6,7 +6,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )
 

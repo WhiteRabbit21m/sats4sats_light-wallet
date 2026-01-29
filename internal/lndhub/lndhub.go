@@ -3,9 +3,9 @@ package lndhub
 import (
 	"net/http"
 
-	"github.com/massmux/SatsMobiBot/internal"
-	"github.com/massmux/SatsMobiBot/internal/api"
-	"github.com/massmux/SatsMobiBot/internal/telegram"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/api"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram"
 	"gorm.io/gorm"
 )
 

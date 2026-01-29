@@ -3,8 +3,8 @@ package telegram
 import (
 	"fmt"
 
-	"github.com/massmux/SatsMobiBot/internal/errors"
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
 	log "github.com/sirupsen/logrus"
 

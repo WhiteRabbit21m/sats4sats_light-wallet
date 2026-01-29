@@ -8,8 +8,8 @@ import (
 	"net/http/httputil"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/telegram"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram"
 	"gorm.io/gorm"
 
 	log "github.com/sirupsen/logrus"

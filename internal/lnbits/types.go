@@ -8,7 +8,7 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcec/v2/ecdsa"
-	"github.com/massmux/SatsMobiBot/internal/satdress"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/satdress"
 
 	"github.com/imroc/req"
 	tb "gopkg.in/lightningtipbot/telebot.v3"

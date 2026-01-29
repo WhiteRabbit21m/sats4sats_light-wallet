@@ -9,16 +9,16 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal/network"
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/network"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
-	"github.com/massmux/SatsMobiBot/internal/errors"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
 
-	"github.com/massmux/SatsMobiBot/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
 	"github.com/tidwall/gjson"
 
 	lnurl "github.com/fiatjaf/go-lnurl"
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
 	log "github.com/sirupsen/logrus"
 	"github.com/skip2/go-qrcode"
 	tb "gopkg.in/lightningtipbot/telebot.v3"

@@ -5,16 +5,16 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/massmux/SatsMobiBot/internal/errors"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
 
-	"github.com/massmux/SatsMobiBot/internal/runtime/mutex"
-	"github.com/massmux/SatsMobiBot/internal/runtime/once"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime/mutex"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime/once"
 
-	"github.com/massmux/SatsMobiBot/internal/i18n"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/i18n"
 	i18n2 "github.com/nicksnyder/go-i18n/v2/i18n"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 	log "github.com/sirupsen/logrus"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )

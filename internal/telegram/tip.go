@@ -6,13 +6,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/errors"
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
-	"github.com/massmux/SatsMobiBot/internal"
-	"github.com/massmux/SatsMobiBot/internal/str"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/str"
 
-	"github.com/massmux/SatsMobiBot/internal/i18n"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/i18n"
 	log "github.com/sirupsen/logrus"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )

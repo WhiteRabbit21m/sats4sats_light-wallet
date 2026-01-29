@@ -3,9 +3,9 @@ package telegram
 import (
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/errors"
-	"github.com/massmux/SatsMobiBot/internal/runtime"
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )
 

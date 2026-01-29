@@ -1,4 +1,4 @@
-module github.com/massmux/SatsMobiBot
+module github.com/WhiteRabbit21m/sats4sats_light-wallet
 
 go 1.24.2
 

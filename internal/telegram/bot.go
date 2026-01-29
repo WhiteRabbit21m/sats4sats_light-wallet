@@ -8,15 +8,15 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/runtime/mutex"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime/mutex"
 
-	limiter "github.com/massmux/SatsMobiBot/internal/rate"
+	limiter "github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/rate"
 
 	"github.com/eko/gocache/store"
 
-	"github.com/massmux/SatsMobiBot/internal"
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/storage"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/storage"
 	gocache "github.com/patrickmn/go-cache"
 	log "github.com/sirupsen/logrus"
 	tb "gopkg.in/lightningtipbot/telebot.v3"

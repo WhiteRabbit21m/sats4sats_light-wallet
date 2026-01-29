@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
 	"gorm.io/gorm"
 )
 

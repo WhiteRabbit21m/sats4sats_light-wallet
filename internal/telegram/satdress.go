@@ -10,13 +10,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/runtime"
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/satdress"
-	"github.com/massmux/SatsMobiBot/internal/storage"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/satdress"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/storage"
 	"github.com/eko/gocache/store"
 	log "github.com/sirupsen/logrus"
 	"github.com/skip2/go-qrcode"

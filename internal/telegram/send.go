@@ -7,19 +7,19 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
-	"github.com/massmux/SatsMobiBot/internal/errors"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
 
-	"github.com/massmux/SatsMobiBot/internal/runtime/mutex"
-	"github.com/massmux/SatsMobiBot/internal/storage"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime/mutex"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/storage"
 
-	"github.com/massmux/SatsMobiBot/internal/i18n"
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/runtime"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/i18n"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime"
 
-	"github.com/massmux/SatsMobiBot/internal/str"
-	"github.com/massmux/SatsMobiBot/pkg/lightning"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/str"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/pkg/lightning"
 	log "github.com/sirupsen/logrus"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )

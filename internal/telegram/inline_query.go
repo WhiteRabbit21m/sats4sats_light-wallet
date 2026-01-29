@@ -7,19 +7,19 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 
-	"github.com/massmux/SatsMobiBot/internal/runtime"
-	"github.com/massmux/SatsMobiBot/internal/storage"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/storage"
 
-	"github.com/massmux/SatsMobiBot/internal/i18n"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/i18n"
 	i18n2 "github.com/nicksnyder/go-i18n/v2/i18n"
 	log "github.com/sirupsen/logrus"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )
 
 // const queryImage = "https://avatars.githubusercontent.com/u/88730856?v=7"
-const queryImage = "https://github.com/massmux/SatsMobiBot/blob/b3c74ce4609430bdfab0cda61ead645b25b9c68e/resources/satsmobibot-logo.png?raw=true"
+const queryImage = "https://github.com/WhiteRabbit21m/sats4sats_light-wallet/blob/b3c74ce4609430bdfab0cda61ead645b25b9c68e/resources/satsmobibot-logo.png?raw=true"
 
 func (bot TipBot) inlineQueryInstructions(ctx intercept.Context) (intercept.Context, error) {
 	instructions := []struct {

@@ -7,20 +7,20 @@ import (
 	"strings"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal/telegram/intercept"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram/intercept"
 	"github.com/nbd-wtf/go-nostr"
 
-	"github.com/massmux/SatsMobiBot/internal/errors"
-	"github.com/massmux/SatsMobiBot/internal/storage"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/errors"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/storage"
 
-	"github.com/massmux/SatsMobiBot/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/massmux/SatsMobiBot/internal/i18n"
-	"github.com/massmux/SatsMobiBot/internal/lnbits"
-	"github.com/massmux/SatsMobiBot/internal/runtime"
-	"github.com/massmux/SatsMobiBot/internal/str"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/i18n"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/lnbits"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/runtime"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/str"
 	"github.com/skip2/go-qrcode"
 	tb "gopkg.in/lightningtipbot/telebot.v3"
 )

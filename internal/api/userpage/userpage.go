@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/massmux/SatsMobiBot/internal"
-	"github.com/massmux/SatsMobiBot/internal/telegram"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/fiatjaf/go-lnurl"
 	"github.com/gorilla/mux"
@@ -28,7 +28,7 @@ func New(b *telegram.TipBot) Service {
 }
 
 // const botImage = "https://avatars.githubusercontent.com/u/88730856?v=7"
-const botImage = "https://github.com/massmux/SatsMobiBot/blob/b3c74ce4609430bdfab0cda61ead645b25b9c68e/resources/satsmobibot-logo.png?raw=true"
+const botImage = "https://github.com/WhiteRabbit21m/sats4sats_light-wallet/blob/b3c74ce4609430bdfab0cda61ead645b25b9c68e/resources/satsmobibot-logo.png?raw=true"
 
 //go:embed static
 var templates embed.FS

@@ -1,7 +1,7 @@
 package admin
 
 import (
-	"github.com/massmux/SatsMobiBot/internal/telegram"
+	"github.com/WhiteRabbit21m/sats4sats_light-wallet/internal/telegram"
 )
 
 type Service struct {

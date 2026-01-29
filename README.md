@@ -1,12 +1,12 @@
-# @SatsMobiBot
+# Sats4Sats Light Wallet
 
-A Telegram Lightning ⚡️ Bitcoin wallet. This project is a fork and evolution of the decommissioned LightningTipBot.
+A Telegram Lightning ⚡️ Bitcoin wallet. This project is a personal fork and simplified version of SatsMobiBot (originally forked from the decommissioned LightningTipBot).
 
-This repository contains everything you need to set up and run your own Lightning wallet bot. If you simply want to use this bot in your group chat without having to install anything just start a conversation with [@SatsMobiBot](https://t.me/SatsMobiBot) and invite it into your group chat.
+This repository contains everything you need to set up and run your own Lightning wallet bot for personal or community use.
 
 Getting payments in Lightning is immediate and requires no additional software installed and no external apps.
 
-The first time you run /start command, you will immediately get a @sats.mobi Lightning address connected and ready to go.
+The first time you run /start command, you will immediately get a Lightning address connected and ready to go.
 
 ## Made with
 
@@ -31,5 +31,5 @@ You can give the use of this Bot to your community for easy Lightning Network ad
 
 This project has educational and research purposes.
 
-You can either compile the software in Go or use the pre-built docker image available on docker hub and using the docker-compose.yml file.
+You can compile the software in Go for your platform.
 
