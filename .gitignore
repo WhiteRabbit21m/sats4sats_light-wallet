@@ -3,6 +3,6 @@ config.yaml*
 data/*
 !data/.placeholder
 LightningTipBot
-sats4sats-wallet
+sats4sats_light-wallet
 .idea
 old
