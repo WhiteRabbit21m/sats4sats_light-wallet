@@ -59,7 +59,7 @@ infoButtonMessage = """Info"""
 
 # AIDE
 
-helpMessage = """⚡️ *SatsMobi*
+helpMessage = """⚡️ *sats4sats Light Wallet*
 _Ce bot est un Bitcoin Lightning Wallet qui permet d'envoyer des Tips sur Telegram.
 Il fonctionne avec Nostr. Le montant maximum autorisé est de 300K Sats. Tapez /basics pour plus d'info et les conditions d'utilisation._
 

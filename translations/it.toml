@@ -59,7 +59,7 @@ infoButtonMessage = """Info"""
 
 # HELP
 
-helpMessage = """⚡️ *SatsMobi*
+helpMessage = """⚡️ *sats4sats Light Wallet*
 _Questo è un Wallet Bitcoin Lightning con cui puoi inviare tip via Telegram.
 Abilitato per Nostr. L'importo massimo consentito è di 300K Sats. Digita /basics per maggiori informazioni e i Termini di Servizio._
 

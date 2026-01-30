@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/dev/sats4sats-wallet
-ExecStart=/home/dev/sats4sats-wallet/sats4sats-wallet
+WorkingDirectory=/home/dev/sats4sats_light-wallet
+ExecStart=/home/dev/sats4sats_light-wallet/sats4sats_light-wallet
 User=dev
 Restart=always
 

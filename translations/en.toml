@@ -63,7 +63,7 @@ payButtonEmoji = """💸"""
 
 # HELP
 
-helpMessage = """⚡️ *SatsMobi*
+helpMessage = """⚡️ *sats4sats Light Wallet*
 _This is a Bitcoin Lightning Wallet that can send and receive tips on Telegram. Nostr enabled.
 Maximum amount allowed is 300K Sats. Hit /basics for more info and Terms Of Service._
 

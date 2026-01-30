@@ -65,7 +65,7 @@ payButtonEmoji = """💸"""
 
 # HELP
 
-helpMessage = """⚡️ *SatsMobi*
+helpMessage = """⚡️ *sats4sats Light Wallet*
 _Esta es una Cartera Bitcoin Lightning que puede enviar y recibir propinas en Telegram. Nostr habilitado.
 La cantidad máxima permitida es de 300K de Sats. Pulsa /basics para más información y Términos de Servicio._
 
